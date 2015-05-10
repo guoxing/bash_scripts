@@ -8,6 +8,7 @@ NC='\033[0m'
 
 if git rev-parse --git-dir > /dev/null 2>&1 ; then
   # current directory is git
+  git remote update &> /dev/null
   LOCAL=$(git rev-parse @)
   REMOTE=$(git rev-parse @{u} 2> /dev/null)
   if [ $? -ne 0 ]; then
